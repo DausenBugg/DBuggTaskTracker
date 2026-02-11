@@ -3,19 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  // Load tasks from localStorage on initial render
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem('tasks');
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
   const [newTask, setNewTask] = useState('');
   const [editingId, setEditingId] = useState(null);
   const [editingText, setEditingText] = useState('');
   const [lastConfetti, setLastConfetti] = useState(null);
-
-  // Load tasks from localStorage on mount
-  useEffect(() => {
-    const savedTasks = localStorage.getItem('tasks');
-    if (savedTasks) {
-      setTasks(JSON.parse(savedTasks));
-    }
-  }, []);
 
   // Save tasks to localStorage whenever they change
   useEffect(() => {
@@ -76,7 +72,10 @@ function App() {
     } else if (completionPercentage < 100) {
       setLastConfetti(null);
     }
-  }, [completionPercentage, tasks, lastConfetti]);
+    // lastConfetti is intentionally excluded from deps to avoid infinite loop
+    // We only want to trigger when completionPercentage or tasks change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [completionPercentage, tasks]);
 
   // Add new task
   const addTask = (e) => {
