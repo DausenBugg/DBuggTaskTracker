@@ -4,17 +4,17 @@ A modern, feature-rich weekly task tracker built with React, Tailwind CSS, Frame
 
 ## Features
 
-- ✅ **Full CRUD Operations**: Create, Read, Update, and Delete tasks
-- 💾 **LocalStorage Persistence**: Tasks are automatically saved and persist across browser sessions
-- 📊 **Progress Bar**: Visual progress bar showing completion percentage
-- 🎉 **Confetti Animation**: Celebration animation triggers at 100% completion
-- ⏰ **Auto-Clear**: All tasks automatically clear every Sunday at 12:00 AM
-- ⚠️ **Deadline Warning**: 48-hour warning system
+-  **Full CRUD Operations**: Create, Read, Update, and Delete tasks
+-  **LocalStorage Persistence**: Tasks are automatically saved and persist across browser sessions
+-  **Progress Bar**: Visual progress bar showing completion percentage
+-  **Confetti Animation**: Celebration animation triggers at 100% completion
+-  **Auto-Clear**: All tasks automatically clear every Sunday at 12:00 AM
+-  **Deadline Warning**: 48-hour warning system
   - If current time is Friday 12:00 AM or later (48 hours before Sunday deadline)
   - Incomplete tasks shake and turn red
   - Warning message displayed
-- 🌙 **Modern Dark UI**: Clean, professional dark mode interface
-- ✨ **Smooth Animations**: Beautiful animations powered by Framer Motion
+-  **Modern Dark UI**: Clean, professional dark mode interface
+-  **Smooth Animations**: Beautiful animations powered by Framer Motion
 
 ## Tech Stack
 
@@ -63,7 +63,7 @@ The app will be available at: `https://DausenBugg.github.io/DBuggTaskTracker`
 3. **Edit a Task**: Click the "Edit" button, modify the text, then click "Save"
 4. **Delete a Task**: Click the "Delete" button to remove a task
 5. **Track Progress**: Watch the progress bar at the top update as you complete tasks
-6. **Celebrate**: Complete all tasks to trigger a confetti animation! 🎉
+6. **Celebrate**: Complete all tasks to trigger a confetti animation!
 
 ## Key Implementation Details
 
